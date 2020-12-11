@@ -1,0 +1,123 @@
+extra:
+  social:
+  - icon: fontawesome/brands/twitter
+    link: https://twitter.com/prof_plewis
+  - icon: fontawesome/brands/docker
+    link: https://hub.docker.com/r/proflewis/geog0111
+  - icon: fontawesome/brands/github
+    link: https://github.com/UCL-EO/geog0111
+extra_javascript:
+- javascripts/config.js
+google_analytics:
+- UA-1347772-1
+- auto
+markdown_extensions:
+- pymdownx.arithmatex:
+    generic: true
+nav:
+- Introduction: index.md
+- Course Basics:
+  - Notebook Use: 001_Notebook_use.md
+  - Unix: 002_Unix.md
+  - Help: 003_Help.md
+  - Accounts: 004_Accounts.md
+  - Packages: 005_Packages.md
+  - Answers:
+    - Notebook Use: 001_Notebook_use_answers.md
+    - Unix: 002_Unix_answers.md
+    - Help: 003_Help_answers.md
+- Core Concepts:
+  - Python Introduction: 010_Python_Introduction.md
+  - Python Data Types: 011_Python_data_types.md
+  - Python Strings: 012_Python_strings.md
+  - Python String Methods: 013_Python_string_methods.md
+  - Python Groups: 014_Python_groups.md
+  - Python Control: 015_Python_control.md
+  - Python For: 016_Python_for.md
+  - Functions: 017_Functions.md
+  - Running Python: 018_Running_Python.md
+  - Answers:
+    - Python Introduction: 010_Python_Introduction_answers.md
+    - Python Data Types: 011_Python_data_types_answers.md
+    - Python Strings: 012_Python_strings_answers.md
+    - Python String Methods: 013_Python_string_methods_answers.md
+    - Python Groups: 014_Python_groups_answers.md
+    - Python Control: 015_Python_control_answers.md
+    - Python For: 016_Python_for_answers.md
+    - Functions: 017_Functions_answers.md
+    - Running Python: 018_Running_Python_answers.md
+- Data Basics:
+  - Python Files: 020_Python_files.md
+  - Streams: 021_Streams.md
+  - Read Write Files: 022_Read_write_files.md
+  - Plotting: 023_Plotting.md
+  - Image Display: 024_Image_display.md
+  - Answers:
+    - Python Files: 020_Python_files_answers.md
+    - Streams: 021_Streams_answers.md
+    - Read Write Files: 022_Read_write_files_answers.md
+    - Plotting: 023_Plotting_answers.md
+    - Image Display: 024_Image_display_answers.md
+- Array Data:
+  - NASA MODIS Earthdata: 030_NASA_MODIS_Earthdata.md
+  - Numpy: 031_Numpy.md
+  - More Numpy: 032_More_numpy.md
+  - Answers:
+    - NASA MODIS Earthdata: 030_NASA_MODIS_Earthdata_answers.md
+    - Numpy: 031_Numpy_answers.md
+    - More Numpy: 032_More_numpy_answers.md
+- Geospatial Data:
+  - GDAL Mosaicing And Masking: 040_GDAL_mosaicing_and_masking.md
+  - GDAL Timeseries: 041_GDAL_timeseries.md
+  - Weighted Smoothing And Interpolation: 042_Weighted_smoothing_and_interpolation.md
+  - Weighted Interpolation: 043_Weighted_interpolation.md
+  - Answers:
+    - GDAL Mosaicing And Masking: 040_GDAL_mosaicing_and_masking_answers.md
+    - GDAL Timeseries: 041_GDAL_timeseries_answers.md
+    - Weighted Interpolation: 043_Weighted_interpolation_answers.md
+- Modelling:
+  - Models: 050_Models.md
+  - Phenology Model: 051_Phenology_model.md
+  - Answers:
+    - Models: 050_Models_answers.md
+    - Phenology Model: 051_Phenology_model_answers.md
+- Assessment:
+  - Groups: 060_Groups.md
+  - Script: 061_Script.md
+  - Part1: 062_Part1.md
+  - Part1 Code: 063_Part1_code.md
+  - Numpy: 064_Numpy.md
+  - Lai: 065_LAI.md
+  - Part2: 066_Part2.md
+  - Answers:
+    - Groups: 060_Groups_answers.md
+    - Script: 061_Script_answers.md
+    - Numpy: 064_Numpy_answers.md
+    - Lai: 065_LAI_answers.md
+- Summary:
+  - Summary: 070_Summary.md
+plugins:
+- git-revision-date-localized
+- exclude:
+    glob:
+    - '*blank.tif'
+    - '*.pyc'
+    - data/Hydrologic_Units/HUC_Lines*
+    - geog0111/__pycache__/*
+    - work/*
+    - __pycache__
+    - '*.bin'
+    - '*.hdf'
+    - '*.store'
+    - '*.nc'
+    - '*.zip'
+    - '*.npz'
+    - data/ucl/*
+    - '*.vrt'
+repo_url: https://github.com/UCL-EO/geog0111
+site_author: Prof P. Lewis
+site_name: GEOG0111
+theme:
+  favicon: images/ucl.png
+  logo: images/ucl.png
+  name: material
