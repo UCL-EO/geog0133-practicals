@@ -88,8 +88,80 @@ def plotme(x,photo,plotter):
     plotter['subplot'] += 1
     return plotter
 
+def day_plot(params,info='',title=None):
+    '''
+    Plot assimilation over the day
 
-def day_plot(jd,ipar,Tc,p,info='',title=None,fig=None,axs=None,final=False):
+    Inputs:
+    params : a list of (jd,ipar,Tc,p,doy) with
+    
+    jd:   day of year (including fraction of day)
+    ipar: incident PAR (u mol(photons) / (m^2 s))
+    Tc:   surface Temperature
+    p:     photosynthesis object
+    doy:   integer doy
+
+    Keywords:
+    title: plot super title
+    '''
+    n = len(params)
+    fig,axs = plt.subplots( 1+n, 2, figsize=(11,2.5*(1+n)))
+    fig.suptitle(title)
+    colours = ['r','g','b','c','m','y','k']
+    
+    # ipar
+    for i in range(n):
+        jd,ipar,Tc,p,doy = params[i]
+        axs[0,1].plot(jd,ipar, f'{colours[i]}-',label=str(doy))
+    axs[0,1].set_ylabel('iPAR $\mu mol\, photons/ (m^2 s))$')
+    axs[0,1].set_xlim(jd[0],jd[-1])
+    axs[0,1].legend(loc='best')
+
+    # TC
+    for i in range(n):
+        jd,ipar,Tc,p,doy = params[i]
+        axs[0,0].plot(jd, Tc, f'{colours[i]}-',label=str(doy))
+
+    axs[0,0].set_ylabel("$T_c$ (C)")
+    axs[0,0].set_xlim(jd[0],jd[-1])
+    axs[0,0].legend(loc='best')
+    
+    for i in range(n):
+        jd,ipar,Tc,p,doy = params[i]
+        # now plot Al  over the day
+        axs[i+1,0].plot(jd,(p.W)*1.e6, '-',label=f"W {doy}")
+        axs[i+1,0].plot(jd,(p.Al)*1.e6, '-',label=f"Al {doy}")
+        axs[i+1,0].plot(jd,(p.Rd)*1.e6, '-',label=f"Rd {doy}")
+        axs[i+1,0].set_xlim(jd[0],jd[-1])
+        
+        if i == n-2:
+            axs[i+1,0].set_ylabel('Assim/Respiration rate $[\mu mol\, m^{-2} s^{-1}]$')
+        if i == n-1:
+            axs[i+1,0].set_xlabel("Fraction of day")
+        
+        axs[i+1,0].legend(loc='upper right')
+        
+    for i in range(n):
+        jd,ipar,Tc,p,doy = params[i]
+        # now plot W terms over the day
+        axs[i+1,1].plot( jd, p.Wc * 1e6,label=f'Wc {info}')
+        axs[i+1,1].plot( jd, p.Ws * 1e6,label=f'Ws {info}')
+        axs[i+1,1].plot( jd, p.We * 1e6,label=f'We {info}')
+        axs[i+1,1].plot( jd, p.W * 1e6,label=f'W {info}')
+        axs[i+1,1].plot( jd, p.Al* 1e6,label=f'Al {info}')
+        axs[i+1,1].plot( jd, p.Rd* 1e6,label=f'Rd {info}')
+        if i == n-2:
+            axs[i+1,1].set_ylabel('Assim/Respiration rate $[\mu mol\, m^{-2} s^{-1}]$')
+        if i == n-1:
+            axs[i+1,1].set_xlabel("Fraction of day")
+        axs[i+1,1].set_xlim(jd[0],jd[-1])
+        axs[i+1,1].legend(loc='upper right')
+    return 
+
+
+
+
+def day_plot2(jd,ipar,Tc,p,info='',title=None,fig=None,axs=None,final=False):
     '''
     Plot assimilation over the day
     
@@ -107,7 +179,7 @@ def day_plot(jd,ipar,Tc,p,info='',title=None,fig=None,axs=None,final=False):
     final : True if final plot
     '''
     if (fig is None):
-      fig,axs = plt.subplots( 2, 2, figsize=(10,10))
+      fig,axs = plt.subplots( 2, 2, figsize=(12,10))
       fig.suptitle(title)
  
     axs[0,1].plot(jd,ipar, '-',label=info)
@@ -146,3 +218,78 @@ def day_plot(jd,ipar,Tc,p,info='',title=None,fig=None,axs=None,final=False):
       axs[1,1].legend(loc='upper right')
     return fig,axs
 
+
+def gpp_plot(params,info='',title=None):
+    '''
+    Plot assimilation over the day
+
+    Inputs:
+    params : a list of (jd,ipar,Tc,p,doy) with
+
+    jd:   day of year (including fraction of day)
+    ipar: incident PAR (u mol(photons) / (m^2 s))
+    Tc:   surface Temperature
+    p:     photosynthesis object
+    doy:   integer doy
+
+    Keywords:
+    title: plot super title
+    '''
+    n = len(params)
+    fig,axs = plt.subplots( 1+n, 2, figsize=(11,2.5*(1+n)))
+    fig.suptitle(title)
+    colours = ['r','g','b','c','m','y','k']
+
+    # ipar
+    for i in range(n):
+        jd,ipar,Tc,p,doy = params[i]
+        axs[0,1].plot(jd,ipar, f'{colours[i]}-',label=str(doy))
+    axs[0,1].set_ylabel('iPAR $\mu mol\, photons/ (m^2 s))$')
+    axs[0,1].set_xlim(jd[0],jd[-1])
+    axs[0,1].legend(loc='best')
+
+    # TC
+    for i in range(n):
+        jd,ipar,Tc,p,doy = params[i]
+        axs[0,0].plot(jd, Tc, f'{colours[i]}-',label=str(doy))
+
+    axs[0,0].set_ylabel("$T_c$ (C)")
+    axs[0,0].set_xlim(jd[0],jd[-1])
+    axs[0,0].legend(loc='best')
+
+    for i in range(n):
+        jd,ipar,Tc,p,doy = params[i]
+        # now plot Al  over the day
+        axs[i+1,0].plot(jd,(p.W)*1.e6, '-',label=f"W {doy}")
+        axs[i+1,0].plot(jd,(p.Al)*1.e6, '-',label=f"Al {doy}")
+        axs[i+1,0].plot(jd,(p.Rd)*1.e6, '-',label=f"Rd {doy}")
+        axs[i+1,0].set_xlim(jd[0],jd[-1])
+
+        if i == n-2:
+            axs[i+1,0].set_ylabel('Leaf level Assim/Respiration rate $[\mu mol\, m^{-2} s^{-1}]$')
+        if i == n-1:
+            axs[i+1,0].set_xlabel("Fraction of day")
+
+        axs[i+1,0].legend(loc='upper right')
+        
+    for i in range(n):
+        jd,ipar,Tc,p,doy = params[i]
+        # now plot Al  over the day
+        axs[i+1,1].plot(jd,(p.GPP)*1.e6, '-',label='GPP')
+        axs[i+1,1].set_xlim(jd[0],jd[-1])
+        try:
+          if p.Pi.sum() > 0:
+            axs[i+1,1].plot(jd,(p.Pi)*1.e6, '-',label='NPP')
+        except:
+          pass
+
+        if i == n-2:
+            axs[i+1,1].set_ylabel('NPP/GPP $[mg\,C m^{-2}s^{-1}]$')
+        if i == n-1:
+            axs[i+1,1].set_xlabel("Fraction of day")
+
+        axs[i+1,1].legend(loc='upper right')
+
+    return
+
+    

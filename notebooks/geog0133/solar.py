@@ -77,7 +77,7 @@ from datetime import datetime
 from datetime import timedelta
 
 def radiation(latitude,longitude,doy,
-              tau=0.2,parprop=0.5,year=2020,
+              tau=0.2,parprop=0.5,year=2020,domu=False,
               Tmin=5.0,Tmax=30.0,f=8.0):
     '''
     Simple model of solar radiation making call 
@@ -98,7 +98,7 @@ def radiation(latitude,longitude,doy,
     year:    int 2020 default
     f:       Temperature smearing function characteristic
              length (hours)
-    
+    domu:    Return mu at end of list
     '''
     # Calculate solar position over a day, every 30 mins
     # for somewhere like London (latitude 51N, Longitude=0)
@@ -127,6 +127,8 @@ def radiation(latitude,longitude,doy,
     #Tc = (Tc-Tc.min())
     #Tc = Tc/Tc.max()
     #Tc = (Tc*(Tmax-Tmin) + (Tmin))
-    return jd-jd[0],ipar,Tc
-
+    if domu:
+      return jd-jd[0],ipar,Tc,mu
+    else:
+      return jd-jd[0],ipar,Tc
 
