@@ -5,7 +5,7 @@ import numpy as np
 import scipy.constants
 from datetime import datetime
 from datetime import timedelta
-
+from geog0133.cru import getCRU,splurge
 
 def solar_model(secs, mins, hours, days, months, years, lats, longs, 
                 julian_offset='2000/1/1'):
@@ -69,5 +69,64 @@ def solar_model(secs, mins, hours, days, months, years, lats, longs,
     # Express radiation in mol(photons) / (m^2 s)
     solar_radiation = solar_radiation/energy_par
     return julian_day, sza, earth_sun_distance, solar_radiation
+
+
+
+import numpy as np
+from datetime import datetime
+from datetime import timedelta
+
+def radiation(latitude,longitude,doy,
+              tau=0.2,parprop=0.5,year=2020,
+              Tmin=5.0,Tmax=30.0,f=8.0):
+    '''
+    Simple model of solar radiation making call 
+    to solar_model(), calculating modelled
+    ipar 
+    
+    Arguments:
+    latitude : latitude (degrees)
+    longitude: longitude (degrees)
+    doy:  day of year (integer)
+    
+    Keywords:
+    
+    tau:     optical thickness (0.2 default)
+    parprop: proportion of solar radiation in PAR
+    Tmin:    min temperature (C) 20.0 default
+    Tmax:    max temperature (C) 30.0 default
+    year:    int 2020 default
+    f:       Temperature smearing function characteristic
+             length (hours)
+    
+    '''
+    # Calculate solar position over a day, every 30 mins
+    # for somewhere like London (latitude 51N, Longitude=0)
+    dt = datetime(year,1,1) + timedelta(doy-1)
+
+    jd, sza, distance, solar_radiation = solar_model(
+        0.,np.array([0.,30.]),np.arange(25),dt.day,dt.month,dt.year,
+        latitude, 0 ,julian_offset=f'{year}/1/1')
+    mu = np.cos(np.deg2rad(sza))
+    
+    n = mu.shape[0]
+
+    ipar = solar_radiation* parprop * np.exp(-tau/mu) * mu  # u mol(photons) / (m^2 s)
+    fd = getCRU(2019,longitude=longitude,latitude=latitude)
+    Tmax = fd['tmx'][dt.month-1]
+    Tmin = fd['tmn'][dt.month-1]
+    cld = fd['cld'][dt.month-1]
+    scale = (1-cld/300.)
+    #print(f'Tmin {Tmin:.2f} Tmax {Tmax:.2f} Cloud {cld:.2f} Scale {scale:.2f}')
+    # reduce irradiance by 1/3 on cloudy day
+    ipar = ipar * scale
+    # smear ipar
+    ipar_ = splurge(ipar,f=f)
+    # normalise
+    Tc = ipar_*(Tmax-Tmin)+Tmin
+    #Tc = (Tc-Tc.min())
+    #Tc = Tc/Tc.max()
+    #Tc = (Tc*(Tmax-Tmin) + (Tmin))
+    return jd-jd[0],ipar,Tc
 
 

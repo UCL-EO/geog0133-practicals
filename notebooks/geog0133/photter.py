@@ -89,7 +89,7 @@ def plotme(x,photo,plotter):
     return plotter
 
 
-def day_plot(jd,ipar,Tc,p,title=None):
+def day_plot(jd,ipar,Tc,p,info='',title=None,fig=None,axs=None,final=False):
     '''
     Plot assimilation over the day
     
@@ -101,47 +101,48 @@ def day_plot(jd,ipar,Tc,p,title=None):
     
     Keywords:
     title: plot super title
+    fig : fig from matplotlib (or None)
+    axs : array of plt from matplotlib subplots (or None)
+    info : info string to add to legends
+    final : True if final plot
     '''
-
-    fig,axs = plt.subplots( 2, 2, figsize=(10,10))
-    fig.suptitle(title)
+    if (fig is None):
+      fig,axs = plt.subplots( 2, 2, figsize=(10,10))
+      fig.suptitle(title)
  
-    # assume PAR is 50% of downwelling radiation
-    # and atmospheric optical thickness of PAR is 0.2
-    # we multiply by cos(solar zenith) here to project
-    # onto a flat surface (a 'big leaf')
-
-
-    axs[0,1].plot(jd,ipar, '-')
-    axs[0,1].set_ylabel('$PAR_{inc}\,\sim$ $\mu mol\, photons/ (m^2 s))$')
-    axs[0,1].set_xlabel("Fraction of day")
-    axs[0,1].set_xlim(jd[0],jd[-1])
+    axs[0,1].plot(jd,ipar, '-',label=info)
+    if final:
+      axs[0,1].set_ylabel('$PAR_{inc}\,\sim$ $\mu mol\, photons/ (m^2 s))$')
+      axs[0,1].set_xlabel("Fraction of day")
+      axs[0,1].set_xlim(jd[0],jd[-1])
     
-    axs[0,0].plot(jd, Tc, '-')
-    axs[0,0].set_ylabel("$T_c$ (C)")
-    axs[0,0].set_xlabel("Fraction of day")
-    axs[0,0].set_xlim(jd[0],jd[-1])
-
+    axs[0,0].plot(jd, Tc, '-',label=info)
+    if final:
+      axs[0,0].set_ylabel("$T_c$ (C)")
+      axs[0,0].set_xlabel("Fraction of day")
+      axs[0,0].set_xlim(jd[0],jd[-1])
     
     # now plot Al  over the day
-    axs[1,0].plot(jd,(p.W)*1.e6, '-',label="W")
-    axs[1,0].plot(jd,(p.Al)*1.e6, '-',label="Al")
-    axs[1,0].plot(jd,(p.Rd)*1.e6, '-',label="Rd")
-    axs[1,0].set_ylabel('Assim/Respiration rate $[\mu mol\, m^{-2} s^{-1}]$')
-    axs[1,0].set_xlabel("Fraction of day")
-    axs[1,0].set_xlim(jd[0],jd[-1])
-    axs[1,0].legend(loc='upper right')
+    axs[1,0].plot(jd,(p.W)*1.e6, '-',label=f"W {info}")
+    axs[1,0].plot(jd,(p.Al)*1.e6, '-',label=f"Al {info}")
+    axs[1,0].plot(jd,(p.Rd)*1.e6, '-',label=f"Rd {info}")
+    if final:
+      axs[1,0].set_ylabel('Assim/Respiration rate $[\mu mol\, m^{-2} s^{-1}]$')
+      axs[1,0].set_xlabel("Fraction of day")
+      axs[1,0].set_xlim(jd[0],jd[-1])
+      axs[1,0].legend(loc='upper right')
 
     # now plot W terms over the day
-    axs[1,1].plot( jd, p.Wc * 1e6,label='Wc')
-    axs[1,1].plot( jd, p.Ws * 1e6,label='Ws')
-    axs[1,1].plot( jd, p.We * 1e6,label='We')
-    axs[1,1].plot( jd, p.W * 1e6,label='W')
-    axs[1,1].plot( jd, p.Al* 1e6,label='Al')
-    axs[1,1].plot( jd, p.Rd* 1e6,label='Rd')
-
-    axs[1,1].set_ylabel('Assim rate factors $[\mu mol\, m^{-2} s^{-1}]$')
-    axs[1,1].set_xlabel("Fraction of day")
-    axs[1,1].set_xlim(jd[0],jd[-1])
-    axs[1,1].legend(loc='upper right')
+    axs[1,1].plot( jd, p.Wc * 1e6,label=f'Wc {info}')
+    axs[1,1].plot( jd, p.Ws * 1e6,label=f'Ws {info}')
+    axs[1,1].plot( jd, p.We * 1e6,label=f'We {info}')
+    axs[1,1].plot( jd, p.W * 1e6,label=f'W {info}')
+    axs[1,1].plot( jd, p.Al* 1e6,label=f'Al {info}')
+    axs[1,1].plot( jd, p.Rd* 1e6,label=f'Rd {info}')
+    if final:
+      axs[1,1].set_ylabel('Assim rate factors $[\mu mol\, m^{-2} s^{-1}]$')
+      axs[1,1].set_xlabel("Fraction of day")
+      axs[1,1].set_xlim(jd[0],jd[-1])
+      axs[1,1].legend(loc='upper right')
+    return fig,axs
 
