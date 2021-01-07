@@ -607,9 +607,9 @@
                 <h1 id="carbon-modelling-practical">Carbon Modelling Practical</h1>
 <h2 id="introduction">Introduction</h2>
 <p>In this practical you will explore the characteristics and response of a model of the terrestrial carbon. At the end of this session, you should be able to better understand the theoretical material on Carbon models we covered in the lectures and explore how different types of vegetation respond to variations in environmental conditions.</p>
-<p>The model implemented is based on that in JULES (<a href="http://www.geosci-model-dev-discuss.net/4/595/2011/gmdd-4-595-2011.html">Best et al., 2011</a>; <a href="http://www.geosci-model-dev.net/4/701/2011/gmd-4-701-2011.html">Clark et al., 2011</a>) with some minor modifications. That model is in any case very similar to that of <a href="SellersSib2.pdf">Sellers et al. (1996)</a>. You should probably refresh your memory of the Sellers paper.</p>
-<p>We will be using driving data from <a href="03-Solar_Practical.md">03-Solar_Practical.md</a>, so you should make sure you are familiar with that material before starting this.</p>
-<p>We will be using the class <code>photosynthesis</code> from the Python code <a href="photJules.py">photJules.py</a>. Embedded in the code, you will find a large number of parameters used to control the Carbon assimilation. These are grouped into 'typical' values (from the literature) for different Plant Functional Types (PFTs). The PFTs coded in this model are:</p>
+<p>The model implemented is based on that in JULES (<a href="http://www.geosci-model-dev-discuss.net/4/595/2011/gmdd-4-595-2011.html">Best et al., 2011</a>; <a href="http://www.geosci-model-dev.net/4/701/2011/gmd-4-701-2011.html">Clark et al., 2011</a>) with some minor modifications. That model is in any case very similar to that of <a href="../data/SellersSib2.pdf">Sellers et al. (1996)</a>. You should probably refresh your memory of the Sellers paper.</p>
+<p>We will be using driving data from <a href="../005_Solar_Practical/">005_Solar_Practical.md</a>, so you should make sure you are familiar with that material before starting this.</p>
+<p>We will be using the class <code>photosynthesis</code> from the Python code <a href="../geog0133/photJules.py">photJules.py</a>. Embedded in the code, you will find a large number of parameters used to control the Carbon assimilation. These are grouped into 'typical' values (from the literature) for different Plant Functional Types (PFTs). The PFTs coded in this model are:</p>
 <ul>
 <li><code>C3 grass</code></li>
 <li><code>C4 grass</code></li>
@@ -621,7 +621,7 @@
 <p><img alt="Clark et al., 2011: figure 2" src="../images/jules-fig2.jpg" /></p>
 <p>Relating this to the previous practical, you might notice the variation in (leaf scale) single scattering albedo (<code>omega</code>) and the temperature ranges specified for the different PFTs.</p>
 <h2 id="photosynthesis-model">Photosynthesis model</h2>
-<p>Much of JULES is derived from  <a href="SellersSib2.pdf">Sellers et al. (1996)</a>. In this approach (for C3, Collatz et al. (1991)), the leaf-level Carbon assimilation rate <code>W</code> is limited by:</p>
+<p>Much of JULES is derived from  <a href="../data/SellersSib2.pdf">Sellers et al. (1996)</a>. In this approach (for C3, Collatz et al. (1991)), the leaf-level Carbon assimilation rate <code>W</code> is limited by:</p>
 <ul>
 <li>carboxylating rate <code>Wc</code>: the efficiency of the photosynthetic enzyme system (Rubisco-limited)</li>
 </ul>
