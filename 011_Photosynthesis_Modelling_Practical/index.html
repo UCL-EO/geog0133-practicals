@@ -1,0 +1,1233 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <meta name="author" content="Prof P. Lewis">
+      
+      <link rel="shortcut icon" href="../images/ucl.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Photosynthesis Modelling Practical - GEOG0133-Practicals</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-1347772-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#carbon-modelling-practical" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="GEOG0133-Practicals" class="md-header-nav__button md-logo" aria-label="GEOG0133-Practicals">
+      
+  <img src="../images/ucl.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            GEOG0133-Practicals
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Photosynthesis Modelling Practical
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/UCL-EO/geog0133-practicals/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GEOG0133-Practicals" class="md-nav__button md-logo" aria-label="GEOG0133-Practicals">
+      
+  <img src="../images/ucl.png" alt="logo">
+
+    </a>
+    GEOG0133-Practicals
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/UCL-EO/geog0133-practicals/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    <label class="md-nav__link" for="nav-2">
+      Course Basics
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Course Basics" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Course Basics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../005_Solar_Practical/" class="md-nav__link">
+      Solar Practical
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
+    <label class="md-nav__link" for="nav-2-2">
+      Answers
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Answers" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        Answers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../005_Solar_Practical_answers/" class="md-nav__link">
+      Solar Practical
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    <label class="md-nav__link" for="nav-3">
+      Core Concepts
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Core Concepts" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Core Concepts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Photosynthesis Modelling Practical
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Photosynthesis Modelling Practical
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#photosynthesis-model" class="md-nav__link">
+    Photosynthesis model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-code" class="md-nav__link">
+    The code
+  </a>
+  
+    <nav class="md-nav" aria-label="The code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-experiments" class="md-nav__link">
+    Running Experiments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiment-1-what-controls-leaf-level-photosynthesis" class="md-nav__link">
+    Experiment 1: What controls leaf-level photosynthesis?
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 1: What controls leaf-level photosynthesis?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leaf-scale-photosynthesis" class="md-nav__link">
+    leaf-scale photosynthesis
+  </a>
+  
+    <nav class="md-nav" aria-label="leaf-scale photosynthesis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise_1" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canopy-scale-assimilation" class="md-nav__link">
+    Canopy scale assimilation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daily-carbon-assimilation" class="md-nav__link">
+    Daily Carbon assimilation
+  </a>
+  
+    <nav class="md-nav" aria-label="Daily Carbon assimilation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise_2" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+    <label class="md-nav__link" for="nav-3-2">
+      Answers
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Answers" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        Answers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../011_Photosynthesis_Modelling_Practical_answers/" class="md-nav__link">
+      Photosynthesis Modelling Practical
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#photosynthesis-model" class="md-nav__link">
+    Photosynthesis model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-code" class="md-nav__link">
+    The code
+  </a>
+  
+    <nav class="md-nav" aria-label="The code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-experiments" class="md-nav__link">
+    Running Experiments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiment-1-what-controls-leaf-level-photosynthesis" class="md-nav__link">
+    Experiment 1: What controls leaf-level photosynthesis?
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 1: What controls leaf-level photosynthesis?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leaf-scale-photosynthesis" class="md-nav__link">
+    leaf-scale photosynthesis
+  </a>
+  
+    <nav class="md-nav" aria-label="leaf-scale photosynthesis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise_1" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canopy-scale-assimilation" class="md-nav__link">
+    Canopy scale assimilation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daily-carbon-assimilation" class="md-nav__link">
+    Daily Carbon assimilation
+  </a>
+  
+    <nav class="md-nav" aria-label="Daily Carbon assimilation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise_2" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/UCL-EO/geog0133-practicals/edit/master/docs/011_Photosynthesis_Modelling_Practical.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="carbon-modelling-practical">Carbon Modelling Practical</h1>
+<h2 id="introduction">Introduction</h2>
+<p>In this practical you will explore the characteristics and response of a model of the terrestrial carbon. At the end of this session, you should be able to better understand the theoretical material on Carbon models we covered in the lectures and explore how different types of vegetation respond to variations in environmental conditions.</p>
+<p>The model implemented is based on that in JULES (<a href="http://www.geosci-model-dev-discuss.net/4/595/2011/gmdd-4-595-2011.html">Best et al., 2011</a>; <a href="http://www.geosci-model-dev.net/4/701/2011/gmd-4-701-2011.html">Clark et al., 2011</a>) with some minor modifications. That model is in any case very similar to that of <a href="SellersSib2.pdf">Sellers et al. (1996)</a>. You should probably refresh your memory of the Sellers paper.</p>
+<p>We will be using driving data from <a href="03-Solar_Practical.md">03-Solar_Practical.md</a>, so you should make sure you are familiar with that material before starting this.</p>
+<p>We will be using the class <code>photosynthesis</code> from the Python code <a href="photJules.py">photJules.py</a>. Embedded in the code, you will find a large number of parameters used to control the Carbon assimilation. These are grouped into 'typical' values (from the literature) for different Plant Functional Types (PFTs). The PFTs coded in this model are:</p>
+<ul>
+<li><code>C3 grass</code></li>
+<li><code>C4 grass</code></li>
+<li><code>Broadleaf tree</code></li>
+<li><code>Needleleaf tree</code></li>
+<li><code>Shrub</code></li>
+</ul>
+<p>Table 2 in <a href="http://www.geosci-model-dev.net/4/701/2011/gmd-4-701-2011.html">Clark et al., 2011</a> provides a summary of the default  PFT-dependent  photosynthesis parameters:</p>
+<p><img alt="Clark et al., 2011: figure 2" src="../images/jules-fig2.jpg" /></p>
+<p>Relating this to the previous practical, you might notice the variation in (leaf scale) single scattering albedo (<code>omega</code>) and the temperature ranges specified for the different PFTs.</p>
+<h2 id="photosynthesis-model">Photosynthesis model</h2>
+<p>Much of JULES is derived from  <a href="SellersSib2.pdf">Sellers et al. (1996)</a>. In this approach (for C3, Collatz et al. (1991)), the leaf-level Carbon assimilation rate <code>W</code> is limited by:</p>
+<ul>
+<li>carboxylating rate <code>Wc</code>: the efficiency of the photosynthetic enzyme system (Rubisco-limited)</li>
+</ul>
+<p>For <span class="arithmatex">\(C_3\)</span>:</p>
+<div class="arithmatex">\[
+W_c = V_{cmax} \left[ \frac{c_i - \Gamma^*}{c_i + K_c \left( 1 + \frac{O_2}{K_o} \right) } \right]
+\]</div>
+<p>For <span class="arithmatex">\(C_4\)</span>:</p>
+<div class="arithmatex">\[
+W_c = V_{cmax} 
+\]</div>
+<p>which may be further be limited by water stresses (not implemented here).</p>
+<ul>
+<li>light-limiting rate <code>We</code>: the amount of PAR captured by the leaf chlorophyll</li>
+</ul>
+<p>For <span class="arithmatex">\(C_3\)</span>:</p>
+<div class="arithmatex">\[
+W_e = (F_{\pi} \cdot n) \alpha \left( 1 - \omega \right) \left[ \frac{c_i - \Gamma^*}{c_i + 2 \Gamma^* } \right]
+\]</div>
+<p>For <span class="arithmatex">\(C_4\)</span>:</p>
+<div class="arithmatex">\[
+W_e = (F_{\pi} \cdot n) \alpha \left( 1 - \omega \right)
+\]</div>
+<p>with <span class="arithmatex">\(F_{\pi}\)</span> the incident PAR vector and <span class="arithmatex">\(n\)</span> the leaf normal vector.</p>
+<ul>
+<li>transport rate  <code>Ws</code>: the capacity of the leaf to export or utilize the products of photosynthesis</li>
+</ul>
+<p>For <span class="arithmatex">\(C_3\)</span>:</p>
+<div class="arithmatex">\[
+W_s = \frac{V_{cmax}}{2}
+\]</div>
+<p>For <span class="arithmatex">\(C_4\)</span>:</p>
+<div class="arithmatex">\[
+W_s = \frac{2\times 10^4 \times V_{cmax} \times  c_i}{p}
+\]</div>
+<p>with <span class="arithmatex">\(p\)</span> the atmospheric pressure (Pa).</p>
+<p>A dark respiration rate, <code>Rd</code> is subtracted from the assimilation. </p>
+<p>A scalar control on <code>Ws</code> and <code>Wc</code> is <code>Vcmax</code>, the maximum rate of carboxylation of Rubisco. This is in turn scaled by the leaf Nitrogen parameter (<code>n0</code>). It is modulated by temperature relative to the temperature range constraints. </p>
+<p>The light-limited rate <code>We</code> is defined by the product of the quantum efficiency <code>alpha</code>, the PAR absorption rate (<code>ipar</code>) projected onto a leaf surface, and the leaf absorptance (1 - <code>omega</code>), where <code>omega</code> is the leaf single scattering albedo. </p>
+<p>For C3 plants, <code>We</code> and <code>Wc</code> are modulated by internal leaf CO2 concentration effects that are functions of <code>Gamma</code>, the CO2 compensation point without leaf respiration. For <code>Wc</code>, additional parameters, the Michaelis-Menton constants for CO2 and O2, come into play. These are in turn functions of temperature.</p>
+<p>For C4 plants, <code>Ws</code> is directly scaled by internal leaf CO2 concentration relative to surface pressure.</p>
+<p>The product of <code>Vcmax</code> and the PFT-specific factor <code>fdr</code> give dark respiration.</p>
+<h2 id="the-code">The code</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from geog0133.photJules import photosynthesis
+from geog0133.photter import plotme,day_plot,gpp_plot
+from geog0133.solar import radiation
+from geog0133.pp import daily_PP,annual_npp
+from geog0133.cru import getCRU,splurge
+from matplotlib import animation
+from datetime import datetime, timedelta
+# import codes we need into the notebook
+</code></pre>
+<p>A starting point is to produce a function that uses the model in an easy way. The function <code>do_photosynthesis</code> does just that. It takes a large number of options, and allows us to do different plots, etc. The parameters are:</p>
+<ul>
+<li><code>ipar</code>: Incoming radiation in units of <span class="arithmatex">\(\mu mol\, m^{−2}s^{−1}\)</span> (default: 200)</li>
+<li><code>Tc</code>: Temperature in Celsius</li>
+<li><code>co2_ppmv</code>: <span class="arithmatex">\(CO_2\)</span> concentration in units of ppmv</li>
+<li><code>n</code>: Length of array (default value: 100 bins)</li>
+<li><code>pft_type</code>: type of PFT (see JULES paper for details)</li>
+<li><code>plotter</code>: None or dictionary of plotting options</li>
+<li><code>x</code> : array to be used for <span class="arithmatex">\(x\)</span>-axis for plots (or None in which case the Tc array is used)</li>
+</ul>
+<p>The plotting dictionary is of the form:</p>
+<pre><code>plot_dict = {
+    n_subplots : 1,       # number of sub-plots
+    subplot    : 0,       # index of this sub-plot
+    title      : 'title', # subplot title
+    name       : 'name',  # plot file name 
+    xlabel     : 'x label'# x label   
+    log        : False    # use log scale for y axis
+}
+</code></pre>
+<p>The function returns:</p>
+<pre><code> photo,plotter
+</code></pre>
+<p>where <code>photo</code> contains the model calculations and <code>plotter</code> an updated plotting dictionary.</p>
+<p>The main outputs are (all in <span class="arithmatex">\(mol \ m^{-2} s^{-1}\)</span>):</p>
+<ul>
+<li><code>Wc</code> : carboxylating rate </li>
+<li><code>We</code> : light-limiting rate </li>
+<li><code>Ws</code> : transport rate </li>
+<li><code>W</code> : combined rate </li>
+<li><code>Al</code> : assimilation rate </li>
+<li><code>Rd</code> : dark respiration rate</li>
+</ul>
+<p>all accessible as <code>photo.Wc</code> etc.</p>
+<pre><code class="language-python">def do_photosynthesis(ipar=200.,Tc=None,co2_ppmv=390,n=100,
+          pft_type='C3 grass',plotter=None,x=None):
+    '''
+    A function to run the photosynthesis model. 
+
+    Function allows the user to change
+    a number of important photosynthesis parameters: 
+
+    incoming PAR radiation, canopy temperature, CO2 concentration, 
+    C3/C4 pathway and the PFT type. The first three
+    parameters can be provided as arrays.
+
+    The function will produce a plot of the variation
+    of photosynthesis as it sweeps over the parameter range.
+    '''
+    from geog0133.photJules import photosynthesis
+    photo = photosynthesis()
+    photo.data = np.zeros(n)
+
+    # set plant type to C3
+    if pft_type == 'C4 grass':
+        photo.C3 = np.zeros([n]).astype(bool)
+    else:
+        photo.C3 = np.ones([n]).astype(bool)
+
+    photo.Lcarbon = np.ones([n]) * 1
+    photo.Rcarbon = np.ones([n]) * 1
+    photo.Scarbon = np.ones([n]) * 1
+
+    # set pft type
+    # options are:
+    # 'C3 grass', 'C4 grass', 'Needleleaf tree', 'Shrub'
+    # 'Broadleaf tree'
+    # Note that if C4 used, you must set the array
+    # self.C3 to False
+
+    photo.pft = np.array([pft_type]*n)
+
+    # set up Ipar, incident PAR in (mol m-2 s-1)
+    photo.Ipar = np.ones_like(photo.data) * ipar * 1e-6
+
+    # set co2 (ppmv)
+    photo.co2_ppmv = co2_ppmv*np.ones_like(photo.data)
+
+    # set up a temperature range (C)
+    try:
+        if Tc is None:
+            photo.Tc = Tc or np.arange(n)/(1.*n) * 100. - 30.
+        else:
+            photo.Tc = Tc
+    except:
+        photo.Tc = Tc
+
+    # initialise
+    photo.initialise()
+    # reset defaults
+    photo.defaults()
+
+    # calculate leaf and canopy photosynthesis
+    photo.photosynthesis()
+    try:
+        if x == None:
+            x = photo.Tc
+    except:
+        pass
+    plotter = plotme(x,photo,plotter)
+
+    return photo,plotter
+
+</code></pre>
+<h3 id="running-experiments">Running Experiments</h3>
+<p>We can run the photosynthesis for one or more PFT and plot results as a function of temperature by setting the PFT keyword to one of the following:</p>
+<ul>
+<li><code>C3 grass</code></li>
+<li><code>C4 grass</code></li>
+<li><code>Broadleaf tree</code></li>
+<li><code>Needleleaf tree</code></li>
+<li><code>Shrub</code></li>
+</ul>
+<pre><code class="language-python"># list of all pfts
+pfts = ['C3 grass','C4 grass',\
+            'Broadleaf tree','Needleleaf tree','Shrub']
+
+plotter = {
+    'n_subplots' : len(pfts),  # number of sub-plots
+    'name'       : 'default',  # plot name
+    'ymax'        : None      # max value for y set
+}
+
+# store the data for each PFT in a dictionary
+output = {}
+# loop over pfts
+for pft in pfts:
+    output[pft],plotter = do_photosynthesis(pft_type=pft,plotter=plotter)
+</code></pre>
+<pre><code>&gt;&gt;&gt; Saved result in photter_default.png
+</code></pre>
+<p><img alt="png" src="../011_Photosynthesis_Modelling_Practical_files/011_Photosynthesis_Modelling_Practical_11_1.png" /></p>
+<p>We can access the data generated from the variable <code>photo</code>, e.g. for <code>We</code>:</p>
+<pre><code class="language-python">print(output['C3 grass'].We * 1e6)
+# or eg  maximum value using .max()
+print(f&quot;max We value for C3 grass {output['C3 grass'].We.max() * 1e6} umolCO2m-2s-1&quot;)
+</code></pre>
+<pre><code>[20.07264114 20.05392673 20.03415539 20.01326894 19.99120619 19.96790277
+ 19.94329102 19.91729986 19.88985457 19.86087674 19.83028405 19.79799013
+ 19.76390443 19.72793204 19.68997355 19.64992489 19.60767719 19.56311662
+ 19.51612425 19.46657594 19.41434218 19.35928799 19.30127283 19.24015047
+ 19.17576897 19.10797059 19.03659177 18.96146314 18.88240955 18.79925011
+ 18.71179831 18.61986213 18.52324429 18.42174242 18.31514942 18.20325376
+ 18.08583995 17.96268901 17.83357906 17.69828597 17.55658409 17.40824711
+ 17.25304897 17.0907649  16.92117254 16.74405318 16.55919312 16.36638508
+ 16.16542976 15.9561375  15.73833    15.51184214 15.2765239  15.03224229
+ 14.77888341 14.51635445 14.24458577 13.96353297 13.67317884 13.37353537
+ 13.06464561 12.74658537 12.41946486 12.08343005 11.7386639  11.38538724
+ 11.02385948 10.65437893 10.27728282  9.89294692  9.50178488  9.10424706
+  8.70081907  8.29201989  7.87839955  7.46053652  7.03903474  6.61452024
+  6.18763765  5.75904628  5.32941618  4.89942389  4.46974827  4.04106617
+  3.61404818  3.18935448  2.76763078  2.34950451  1.93558117  1.52644104
+  1.12263616  0.72468765  0.33308343  0.          0.          0.
+  0.          0.          0.          0.        ]
+max We value for C3 grass 20.07264113525945 umolCO2m-2s-1
+</code></pre>
+<h3 id="experiment-1-what-controls-leaf-level-photosynthesis">Experiment 1: What controls leaf-level photosynthesis?</h3>
+<h4 id="exercise">Exercise</h4>
+<p><strong>Light-limiting assimilation</strong></p>
+<p>We repeat Table 2 from <a href="http://www.geosci-model-dev.net/4/701/2011/gmd-4-701-2011.html">Clark et al., 2011</a> for convenience:</p>
+<p><img alt="Clark et al., 2011: figure 2" src="../images/jules-fig2.jpg" /></p>
+<p>From the data in this table and your understanding of the controls on photosynthesis in the model, answer the following questions and confirm your answer by running the model.</p>
+<ul>
+<li>which PFT has the highest values of <code>We</code>, and why?</li>
+<li>How does this change with increasing <code>ipar</code>?</li>
+<li>When ipar is the limiting factor, how does assimilation change when ipar increases by a factor of k?</li>
+<li>For C3 grasses, what are the limiting factors over the temperatures modelled for ipar=200?</li>
+<li>For C3 grasses, what are the limiting factors over the temperatures modelled for ipar=400?</li>
+<li>For C4 grasses, what are the limiting factors over the temperatures modelled? </li>
+</ul>
+<h2 id="leaf-scale-photosynthesis">leaf-scale photosynthesis</h2>
+<p>We will now use some appropriate weather data from our work in <a href="03-Solar_Practical.md">03-Solar_Practical.md</a> to run the photosynthesis model for what should be typical conditions in space and time.</p>
+<pre><code class="language-python">latitude = 51
+longitude = 0
+
+pft = &quot;C3 grass&quot;
+
+year = 2019
+doys = [80,172,264,355]
+
+params = []
+for i,doy in enumerate(doys):
+    jd,ipar,Tc = radiation(latitude,longitude,doy,year=year)
+    p = do_photosynthesis(n=len(ipar), pft_type=pft,Tc=Tc, \
+                          ipar=ipar,co2_ppmv=390,\
+                          x=ipar,plotter=None)[0]
+    params.append((jd,ipar,Tc,p,doy))
+
+# plotting code
+day_plot(params,title=f'{pft}: lat {latitude} lon {longitude}')
+</code></pre>
+<p><img alt="png" src="../011_Photosynthesis_Modelling_Practical_files/011_Photosynthesis_Modelling_Practical_17_0.png" /></p>
+<p>This is an interesting figure as we can now use our theory to produce plots of leaf-level assimilation that look similar to those we will find in the literature. The plots are also interesting because they show us which factor is limiting in these cases. For C3 grass at latitude 51 degrees, we see that <code>Ws</code> and <code>Wc</code>, the transport rate and carboxylating rate and respectively, both functions of <code>Vcmax</code>, are the main limiting factors in the day time. These are strong functions of temperature, relative to the optimal temperature range for the given PFT. In the morning and evening, we see that assimilation becomes light-limited. The temperature range for C3 grass is 0 to 36 C, so the temperatures we see are well away from the extremes of toleration.</p>
+<p>Looking at the left-hand column, we see that the maximum assimilation rate very much follows the <code>Tc</code> patterns: it is higher for days 172 and 264, and lower for 80 and 355. But another factor that is apparent is the daylength: this is considerably longer for day 80 than 355, so even if the maximum assimilation rate is similar, the carbon assimilation would likely be larger in the spring because of the longer daylength.</p>
+<h4 id="exercise_1">Exercise</h4>
+<ul>
+<li>Explain the factors limiting Carbon assimilation for several PFTs, latitudes and time of year</li>
+</ul>
+<p>You should relate your answer to the plots on assimilation as a function of temperature we examined earlier.</p>
+<h2 id="canopy-scale-assimilation">Canopy scale assimilation</h2>
+<p>All of the above experimentation was just at the leaf level. We have essentially looked at responses to temperature and light intensity. Of course, in a ‘real’ canopy, there will be varying amounts of leaf area, so we have to consider how to scale up the leaf-level assimilation to the canopy scale.</p>
+<p>Although there are various ways to scale from leaf-level assimilation to the canopy level, we have only implemented what is perhaps the simplest here. This is based on the assumption that there is an acclimatisation of leaf <span class="arithmatex">\(N\)</span> throughout the canopy (Sellers et al., 1992) giving:
+$$
+V_m = V_{m0} \overline{f(L)}
+$$</p>
+<p>where <span class="arithmatex">\(\overline{f(L)}\)</span> is the average fraction of absorbed PAR (as opposed to instantaneous) at leaf area index (LAI) <span class="arithmatex">\(L\)</span>, <span class="arithmatex">\(V_{m0}\)</span> is the ‘maximum’ (top leaf) assimilation, and <span class="arithmatex">\(V_m\)</span> is the canopy-scale assimilation.</p>
+<p>Assuming a homogeneous canopy, the canopy scale PAR use efficiency <span class="arithmatex">\(\Pi\)</span> is:</p>
+<div class="arithmatex">\[
+\Pi = \int_{0}^{L} \overline{f(l)}\,dl. = \left[ \frac{1-e^{-\overline{k}L}}{\overline{k}} \right] = \frac{\overline{fAPAR}}{\overline{k}}
+\]</div>
+<p>where <span class="arithmatex">\(\overline{fAPAR}\)</span> is the (average) fraction of absorbed PAR by the canopy and <span class="arithmatex">\(\overline{k}\)</span> is an effective extinction coefficient:</p>
+<p>$$
+\overline{k} = \left[ \frac{G(\mu)}{\mu} \right] {(1-\omega_l)}^{\frac{1}{2}}
+$$
+with <span class="arithmatex">\(\mu\)</span> the cosine of the (time mean) solar zenith angle (a path length term), <span class="arithmatex">\(G(\mu)\)</span> the ‘Ross’ or ‘<span class="arithmatex">\(G\)</span>’-function giving the average normalised leaf projection in the direction of the (time mean) incoming radiation, and <span class="arithmatex">\(\omega_l\)</span> is the leaf single scattering albedo (unity minus leaf absorption) in the PAR region (see Sellers et al., 1992 for more details).</p>
+<p>Under these assumptions then, we can calculate canopy scale photosynthesis.</p>
+<div class="arithmatex">\[
+GPP = A_l \frac{\overline{fAPAR}}{\overline{k}}.
+\]</div>
+<p>Suppose we have an amount of leaf carbon of 0.07 <span class="arithmatex">\(kg\,C\,m^{−2}\)</span> and a specific leaf density of 0.025 (<span class="arithmatex">\(kg\,C\,m^{−2}\)</span> per unit of LAI) that is constant throughout the canopy (giving a LAI of 0.07/0.025 = 2.8), and a <span class="arithmatex">\(G\)</span> gunction of 0.5 (e.g. a spherical leaf angle distribution). We can model this as:</p>
+<pre><code class="language-python">def GPP(p,verbose=False):
+    # now we want the canopy level response
+    p.LAI = p.Lcarbon/p.sigmal
+
+    # leaf single scattering albedo
+    p.omega = 0.2
+    p.G = 0.5
+    p.mubar = np.mean(p.mu_)
+    p.kbar = (p.G/p.mubar)*np.sqrt(1-p.omega)
+    p.fapar = 1 - np.exp(-p.kbar * p.LAI)
+    if verbose:
+        print (f'doy {doy:03d} - mubar = {p.mubar:.2f}')
+        print (f'doy {doy:03d} - kbar = {p.kbar:.2f}')
+        print (f'doy {doy:03d} - fapar = {p.fapar.mean():.2f}')
+
+    # kg C m-2 s-1: conversion factor from Clark et al. 2011
+    p.PiG = 0.012 * (p.Al + p.Rd)* p.fapar / p.kbar
+    return(p)
+</code></pre>
+<pre><code class="language-python">latitude = 51.
+longitude = 0.0
+pft = &quot;C3 grass&quot;
+
+year = 2019
+doys = [80,172,264,355]
+
+params = []
+for i,doy in enumerate(doys):
+    jd,ipar,Tc,mu = radiation(latitude,longitude,doy,\
+                              domu=True,year=year)
+
+    # run the leaf level model
+    p = do_photosynthesis(n=len(ipar), pft_type=pft,Tc=Tc, \
+                          ipar=ipar,co2_ppmv=390,\
+                          x=ipar,plotter=None)[0]
+    del p.Pi
+    p.Lcarbon = 0.07 # kg C m-2
+    p.mu_ =  mu
+    p = GPP(p,verbose=True)
+    params.append((jd,ipar,Tc,p,doy))
+
+gpp_plot(params,info='',title=None)
+</code></pre>
+<pre><code>doy 080 - mubar = 0.20
+doy 080 - kbar = 2.21
+doy 080 - fapar = 1.00
+doy 172 - mubar = 0.37
+doy 172 - kbar = 1.22
+doy 172 - fapar = 0.97
+doy 264 - mubar = 0.21
+doy 264 - kbar = 2.18
+doy 264 - fapar = 1.00
+doy 355 - mubar = 0.06
+doy 355 - kbar = 7.86
+doy 355 - fapar = 1.00
+</code></pre>
+<p><img alt="png" src="../011_Photosynthesis_Modelling_Practical_files/011_Photosynthesis_Modelling_Practical_23_1.png" /></p>
+<p>The Net Ecosystem Productivity needs the plant respiration terms to be subtracted from the GPP. This is typically split into mainenance and growth respiration: <span class="arithmatex">\(R_{pm}\)</span> and <span class="arithmatex">\(R_{pg}\)</span> respectively. In Jules, <span class="arithmatex">\(R_{pg}\)</span> is assumed to be a fixed fraction of NPP:
+$$
+R_{p} = R_{pm} + R_{pg}
+$$</p>
+<div class="arithmatex">\[
+R_{pg} = r_g\Pi_{G}
+\]</div>
+<p>where <span class="arithmatex">\(\Pi_{G}\)</span> is the GPP (the canopy scale assimilation). In Jules, <span class="arithmatex">\(r_g\)</span> is set to 0.25 for all PFTs (Clark et al., 2011). Leaf maintenance respiration in Jules is the (moisture-modified, through a term <span class="arithmatex">\(\beta\)</span> that we have not dealt with here) canopy dark respiration (i.e. canopy-scaled). Root and stem respiration are set to depend on the nitrogen concentrations of the root and stem relative to the leaf nitrogen.</p>
+<p>Since we have not introduced stem and root biomass yet, we will assume here that leaf, root and (respiring) stem biomass (<span class="arithmatex">\(L\)</span>, <span class="arithmatex">\(R\)</span> and <span class="arithmatex">\(S\)</span> respectively) we will assume these terms equal for the moment, since we only require their relative amounts:
+$$
+R_{pm}=0.012\cdot R_{dc}\left[\beta+\frac{N_r + N_s}{N_l}\right]
+$$
+where:</p>
+<p><span class="arithmatex">\(N_x\)</span> is the Nitrogen concentration of biomass component <span class="arithmatex">\(x\)</span> and the factor 0.012 converts units (see Clark et al., 2011).</p>
+<div class="arithmatex">\[
+N_l = n_m L
+$$
+$$
+N_r = n_m R \mu_{rl}
+$$
+$$
+N_s = n_m S \mu_{sl}
+\]</div>
+<p>where <span class="arithmatex">\(\mu_{xl}\)</span> is the relative Nitrogen concentartion of biomass component <span class="arithmatex">\(x\)</span> to leaf Nitrogen (assumed 1.0 here). <span class="arithmatex">\(\beta=1\)</span> for unstressed conditions. So:
+$$
+R_{pm}=0.012\cdot R_{dc}\left[\beta+\frac{R + S}{L}\right]
+$$</p>
+<pre><code class="language-python">def NPP(p):
+    p = GPP(p,verbose=False)
+    # NPP calculation
+    p.rg = 0.25
+    # scale Rd (respiration in the light) up to canopy here
+    p.Rpm = 0.036 * p.Rd * p.fapar / p.kbar
+    # Gpp from above, introducing beta
+    p.PiG = 0.012*( p.Al - p.beta * p.Rd) * p.fapar / p.kbar
+    # Grow respiration is a fraction of (GPP - maint resp)
+    p.Rpg = p.rg * (p.PiG - p.Rpm)
+    # ensure Rpg is non negative
+    p.Rpg[p.Rpg &lt; 0] = 0.
+    # total respiration
+    p.Rp = p.Rpm + p.Rpg
+    # NPP: calculated as the difference
+    p.Pi = p.PiG - p.Rp
+    return p
+</code></pre>
+<p>Now plot this along with GPP:</p>
+<pre><code class="language-python">latitude = 51.
+longitude = 0.0
+pft = &quot;C3 grass&quot;
+
+year = 2019
+doys = [80,172,264,355]
+
+params = []
+for i,doy in enumerate(doys):
+    jd,ipar,Tc,mu = radiation(latitude,longitude,doy,\
+                              domu=True,year=year)
+
+    # run the leaf level model
+    p = do_photosynthesis(n=len(ipar), pft_type=pft,Tc=Tc, \
+                          ipar=ipar,co2_ppmv=390,\
+                          x=ipar,plotter=None)[0]
+
+    # we need to store the cosine of the sun angle
+    p.mu_ =  mu
+    # specify leaf carbon
+    p.Lcarbon = 0.07 # kg C m-2
+    # now we want the canopy level response
+    p = NPP(p)
+
+    params.append((jd,ipar,Tc,p,doy))
+
+gpp_plot(params,info='',title=None)
+</code></pre>
+<p><img alt="png" src="../011_Photosynthesis_Modelling_Practical_files/011_Photosynthesis_Modelling_Practical_27_0.png" /></p>
+<h2 id="daily-carbon-assimilation">Daily Carbon assimilation</h2>
+<p>We are now in a position to calculate the Carbon assimilation per day.</p>
+<p>The values of GPP and NPP in the code are in units of <span class="arithmatex">\(Kg\, C\, m^{-2} s^{-1}\)</span> and simulated every 30 seconds, so to get the daily sum in units of <span class="arithmatex">\(Kg\, C\, m^{-2} d^{-1}\)</span> we can take the mean value, multiply by the number of seconds in a day:</p>
+<pre><code class="language-python">def daily_PP(pft=&quot;C3 grass&quot;,Lcarbon=0.07,\
+             latitude=51.,longitude=0.,year=2019):
+    '''
+    Daily GPP and NPP
+
+    Returns numpy arrays of:
+        doys
+        gpp
+        npp
+
+    Keywords:
+        pft       : PFT name
+                    default &quot;C3 grass&quot;
+        Lcarbon   : leaf carbon (kg C m-2)
+                    default 0.07
+        latitude  : latitude (degrees)
+                    default 51.0
+        longitude : longitude (degrees)
+                    default 0.0
+        year      : year, default 2019
+                    (2011-2019 allowed)
+
+    '''
+    doys = np.arange(1,366,dtype=np.int)
+    gpp = np.zeros_like(doys).astype(np.float)
+    npp = np.zeros_like(doys).astype(np.float)
+    for i,doy in enumerate(doys):
+        jd,ipar,Tc,mu = radiation(latitude,longitude,\
+                                  int(doy),domu=True,year=year)
+        # run the leaf level model
+        p = do_photosynthesis(n=len(ipar), pft_type=pft,Tc=Tc,\
+                              ipar=ipar,co2_ppmv=390,\
+                              x=ipar,plotter=None)[0]
+        # now we want the canopy level response
+        p.mu_ =  mu
+        p.Lcarbon = Lcarbon # kg C m-2
+        p = NPP(p)
+        nsec_in_day = 60 * 60 * 24
+        gpp[i] = p.PiG.mean() * nsec_in_day
+        npp[i] = p.Pi.mean() * nsec_in_day
+    return doys,gpp,npp
+
+</code></pre>
+<pre><code class="language-python">latitude = 40.
+longitude = 116.
+year = 2019
+pft = &quot;C3 grass&quot;
+
+doys,gpp,npp = daily_PP(pft=pft,year=year,\
+                        latitude=latitude,longitude=longitude)
+</code></pre>
+<pre><code class="language-python">plt.figure(figsize=(10,5))
+plt.title(f'GPP and NPP: lat {latitude:.1f} lon {longitude:.1f}:'+\
+         f' {year}, {pft}')
+plt.plot(doys,gpp*1e3,label='GPP')
+plt.plot(doys,npp*1e3,label='NPP')
+plt.ylabel('GPP/NPP $[g\,C m^{-2}d^{-1}]$')
+plt.xlabel('day of year')
+_=plt.legend()
+</code></pre>
+<p>This looks like a reasonable form for the plot: at 40 degrees latitude, we get a strong variation from winter to summer. The 'jagged' shape of the lines arises from assuming the same value of temperature for each month.</p>
+<p>Since we have calcualted NPP and GPP, we can integrate them over the year. We can report the summation in units of <span class="arithmatex">\(g\, C\, m^{-2} y^{-1}\)</span> or equivalently <span class="arithmatex">\(t\, C\, km^{-2} y^{-1}\)</span> with <span class="arithmatex">\(t\)</span> metric tons (1000 kg).</p>
+<p>Sometimes, we will see NPP reported in units of <span class="arithmatex">\(t\, C\, ha^{-1} y^{-1}\)</span>. Since <span class="arithmatex">\(1\, ha = 0.01 km^2\)</span>, this involves a scaling factor of 0.01:</p>
+<pre><code class="language-python">print('mean NPP = {:.4f} {:s}'.format(np.mean(npp) * 1e3,
+        'g C m-2 day-1'))
+print('mean GPP = {:.4f} {:s}'.format(np.mean(gpp) * 1e3,
+        'g C m-2 day-1'))
+integral = np.sum(npp) * 1e3 # g C m-2 yr-1
+print (f&quot;NPP = {integral * 0.01:.2f} t C/ha/yr&quot;)
+</code></pre>
+<h4 id="exercise_2">Exercise</h4>
+<p>From the illustration above, we get an NPP for C3 grass for a latitude 40N of 6.22 t C/ha/yr. </p>
+<ul>
+<li>Check in the literature that this is a reasonable value for NPP</li>
+<li>Explore how the annual NPP compares for different biomes and latitudes</li>
+</ul>
+<p>(NB No model answers given for this section -- you need to follow it up yourself)</p>
+<h2 id="summary">Summary</h2>
+<p>NPP is a key concept in terrestrial carbon dynamics. It expresses the 'raw' inputs of carbon (from the atmosphere) to vegetation. It is driven by solar radiation and so, not surprisingly broadly follows global patterns of radiation, but it is also limited by temperature, water, nutrients, and an opportunity to grow.</p>
+<p>We have used all of the theory we have learned about in the lectures to develop a model of NPP that we can apply to different biomes (PFTs), locations and times. The model we have here is intentionally limited and slightly simplified for illustration, but is in essence the same as you will find in any DGVM. We have seen that the emphasis here has been on leaf-level carbon exchange, with a somewhat simplistic scaling of process from the leaf to the canopy, but that is the state of the art in this area. We have also seen that the PFT approach allows us to draw general conclusions about primary production and the impact of climate on this, but even in this case, there are quite a number of internal parameters that are assumed <em>known</em>. We have not, in this work, included any idea of these parameters being uncertain or poorly constrained, but that is most surely the case. How well this sort of modelling relates to reality has been the subject of a large number of studies and comparisons with measurement, and it is only through such comparisons that we learn about any deficiencies in our models. </p>
+<p>One of the simplifications made in the modelling here is that the leaf carbon (hence the leaf area index, LAI) is specified: even though we calculate the carbon input, we do not (in this model) go the final stage of allocating this carbon to plant organs. One reason for that is that we then need to consider phenology, which is beyond the scope of this practical. When you are thinking through what you have learned from this practical though, you should have the ideas to hand from the lecture materials to be able to think through how we might implement plant growth and senescence in a model of this nature: once you have that, you have most of the ingredients of your own DGVM!</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2021</span>
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../005_Solar_Practical_answers/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Solar Practical
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../011_Photosynthesis_Modelling_Practical_answers/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Photosynthesis Modelling Practical
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/prof_plewis" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/UCL-EO/geog0133-practicals" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>

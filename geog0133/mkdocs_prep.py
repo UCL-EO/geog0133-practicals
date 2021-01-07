@@ -49,7 +49,7 @@ files.sort()
 defaults = {
   'icon':'images/ucl_logo.png',
   'theme':{'favicon':'images/ucl.png'},
-  'site_name':'GEOG0111',
+  'site_name':'GEOG0133-Practicals',
   'description':'',
   'author':'A. Nonymous',
   'author_email':'Not known',
